@@ -9,6 +9,7 @@ app.listen(process.env.PORT || 3000)
 
 // Функция main()
 function main(req, res) {
-  res.send('Yo!')
+ // res.send('Yo!')
+  res.json(req.body)
 //  res.send(JSON.stringify(req))
 }
