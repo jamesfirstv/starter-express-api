@@ -1,7 +1,10 @@
 // Подготовка сервера
-const srv = require('express')()     // Загрузка либы Express
-srv.all('/mrwtd', main)              // Обрабатывать будем запросы на /mrwtd ("Message reserved, what to do?")
-srv.listen(process.env.PORT || 3000) // Стартуем сервак
+const express       = require("express")
+const bodyParser = require("body-parser")
+const router           = express.Router()
+const app               = express()
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // Функция main()
 function main(req, res) {
