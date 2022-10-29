@@ -6,5 +6,5 @@ srv.listen(process.env.PORT || 3000) // Стартуем сервак
 // Функция main()
 function main(req, res) {
   // res.send('Yo!')
-  res.send(req.toString())
+  res.send(JSON.stringify(req))
 }
