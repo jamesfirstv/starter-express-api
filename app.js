@@ -5,7 +5,7 @@ const router           = express.Router()
 const app               = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-//app.get('*', main)
+app.get('*', main)
 app.post(‘*’, main)
 
 // Функция main()
