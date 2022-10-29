@@ -1,12 +1,11 @@
 // Подготовка сервера
 const express       = require("express")
 const bodyParser = require("body-parser")
-const router           = express.Router()
 const app               = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.get('*', main)
-//app.post(‘*’, main)
+app.all('*', main)
+app.listen(process.env.PORT || 3000)
 
 // Функция main()
 function main(req, res) {
