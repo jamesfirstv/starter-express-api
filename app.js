@@ -4,7 +4,11 @@ const bodyParser = require("body-parser")
 const app               = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.all('*', main)
+app.all('*', (req, res) => {
+  res.send(JSON.stringify({"replies": [
+		{"message": main(req, res)}
+  ]}))
+})
 app.listen(process.env.PORT || 3000)
 
 // Функция main()
