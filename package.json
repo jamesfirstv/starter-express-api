@@ -8,6 +8,6 @@
   "license": "asis",
   "dependencies": {
     "express": "^4.17.1",
-    "body-parser": "1.20.1"
+    "body-parser": "1.19.0"
   }
 }
