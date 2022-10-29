@@ -1,8 +1,6 @@
-// const express = require('express')
-// const app = express()
+// Старт сервера
 const app = require('express')()
 app.all('/', (req, res) => {
-    console.log("Just got a request!")
     res.send('Yo!')
 })
 app.listen(process.env.PORT || 3000)
