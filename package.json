@@ -1,21 +1,11 @@
 {
-  "name": "starter-express-api",
+  "name": "tgsup",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyclic-software/starter-express-api.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cyclic-software/starter-express-api/issues"
-  },
-  "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
+  "description": "nodesc",
+  "main": "app.js",
+  "repository": "https://github.com/jamesfirstv/tgsup",
+  "author": "Yog",
+  "license": "asis",
   "dependencies": {
     "express": "^4.17.1"
   }
