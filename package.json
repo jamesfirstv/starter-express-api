@@ -5,9 +5,9 @@
   "main": "app.js",
   "repository": "https://github.com/jamesfirstv/tgsup",
   "author": "Yog",
-  "license": "asis",
+  "license": "as-",
   "dependencies": {
     "express": "^4.17.1",
-    "body-parser": ""
+    "body-parser": "1.20.1"
   }
 }
