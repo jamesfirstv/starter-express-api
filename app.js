@@ -11,8 +11,7 @@ app.listen(process.env.PORT || 3000)
 function main(req, res) {
   res.send('Yo!')
   JSON.stringify({"replies": [
-		array("message" => "Hey " . $sender . "!\nThanks for sending: " . $message),
-		array("message" => "Success ✅")
+		{"message" => "Success ✅"}
 	]})
   console.log(req.body)
 //  res.send(JSON.stringify(req))
