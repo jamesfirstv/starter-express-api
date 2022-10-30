@@ -7,7 +7,7 @@ function main(msg) {
       return actPath(msg)
     case /ты очень голоден/:
       return '/myfood'
-    case /use_1[1-2]\d/:
+    case /use_1[0-2]\d/:
       return actFood(msg)
     case /🤝передать \/givestuff/:
       return '/givestuff'
