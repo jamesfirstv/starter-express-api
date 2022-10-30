@@ -26,7 +26,10 @@ function actPath(msg) {
 // --------------------
 // Ветка жрачки
 function actFood() {
-  return
+  let food = msg.match(/use_(\d{3})/)[1]
+  switch (food) {
+    case 101: case 104: case 
+  }
 }
 
 // ====================
