@@ -3,6 +3,7 @@ function main(msg) {
   console.log('Респондер прислал:\n' + msg + '\n')
   if (msg.match(/💬 чат лагеря/))
     return '🏘В Нью-Рино'
+if
   if (msg.match(/👣/))
     return actPath(msg)
   if (msg.match(/ты очень голоден/))
@@ -29,8 +30,10 @@ function main(msg) {
 
 // --------------------
 // Ветка километража
-function actPath(msg) {
+function actPath(parse) {
   let x = Number(msg.match(/👣(\d)+км/)[1])
+ 
+  
   switch (x) {
     case 2: return '👣Идти дaльше'
     case 22: return '🚷В Темную зону'
