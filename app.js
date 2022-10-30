@@ -20,7 +20,7 @@ function main(msg) {
     || msg.match(/датацентр\n 🕳+/)
   ) return '👣Идти дaльше'
 
-  if (msg.match(/ты очень голоден/i))
+  if (msg.match('Ты очень голоден'))
     return '/myfood'
   parse = msg.match(/use_(1[0-2]\d)/)
   if (parse) parse = actFood(parse)
