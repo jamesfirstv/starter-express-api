@@ -74,7 +74,8 @@ function actClean(msg) {
     'Электромеч'
   ]
 
-  msg.match(RegExp())
+  
+  msg.match(RegExp(badGoods[i]+'.*\/dl_(\d+)'))
 }
 
 // ====================
