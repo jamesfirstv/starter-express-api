@@ -17,7 +17,7 @@ function main(msg) {
     || msg.match(/во время вылазки на тебя напал/)
   ) return '⚔️Дать отпор'
   if (
-    msg.match(/\/view/)
+    msg.match('/view')
     || msg.match(/ты одержал победу!/)
     || msg.match(/и его/)
     || msg.match(/\n🐐/)
