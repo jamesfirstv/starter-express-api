@@ -13,14 +13,16 @@ function main(msg) {
     return '/myfood'
   parse = msg.match(/use_(1[0-2])\d/)
   if (parse) parse = actFood(msg)
-  if (parse)
+  if (parse) return parse
 
   if (msg.match(/🤝передать \/givestuff/))
       return '/givestuff'
+
   if (
     msg.match(/ты не сможешь увильнуть от противника/)
     || msg.match(/во время вылазки на тебя напал/)
   ) return '⚔️Дать отпор'
+
   if (
     msg.match('view')
     || msg.match(/ты одержал победу!/)
