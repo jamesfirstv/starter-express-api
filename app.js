@@ -15,7 +15,7 @@ function main(msg) {
   if (parse) parse = actFood(msg)
   if (parse) return parse
 
-  if (msg.match(/🤝передать \/givestuff/))
+  if (msg.match('🤝передать /givestuff'))
       return '/givestuff'
 
   if (
