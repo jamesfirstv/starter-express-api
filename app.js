@@ -74,8 +74,13 @@ function actClean(msg) {
     'Электромеч'
   ]
 
+  i = 0
+  let found = false
+  let parse
+  do {
+    parse = msg.match(RegExp(badGoods[i]+'.*\/dl_(\d+)'))
+  } while (
   
-  msg.match(RegExp(badGoods[i]+'.*\/dl_(\d+)'))
 }
 
 // ====================
