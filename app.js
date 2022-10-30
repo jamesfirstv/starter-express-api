@@ -1,6 +1,5 @@
-function main(req, res) {
-  console.log(req.body.query.message)
-  return "Success ✅"
+function main(req) {
+  return req.query.message
 }
 
 // ====================
@@ -12,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.all('*', (req, res) => {
   res.send(JSON.stringify({"replies": [
-		{"message": main(req, res)}
+		{"message": main(req.body)}
   ]}))
 })
 app.listen(process.env.PORT || 3000)
