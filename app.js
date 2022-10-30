@@ -23,7 +23,6 @@ function main(msg) {
     case /водохранилище\n 🕳+/:
     case /датацентр\n 🕳+/:
       return '👣Идти дaльше'
-    case /
   }
 }
 
@@ -43,7 +42,11 @@ function actPath(msg) {
 // --------------------
 // Ветка жрачки
 function actFood() {
-  let food = Int(msg.match(/use_(\d{3})/)[1])
+//  let food = Int(msg.match(/use_(\d{3})/)[1])
+  let usl = /regExp/
+  let arrFood = msg.match(usl)
+  let want = arrFood[1]
+  let food = Int(want)
   switch (food) {
     case 101: case 104: case 117: case 119:
     case 121: case 122: return '/use_'+food
