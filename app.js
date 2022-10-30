@@ -22,7 +22,7 @@ function main(msg) {
 
   if (msg.match('Ты очень голоден'))
     return '/myfood'
-  parse = msg.match(/use_(1[0-2]\d)/)
+  parse = msg.match(/use_1[0-2]\d/g)
   if (parse) parse = actFood(parse)
   if (parse) return parse
 
