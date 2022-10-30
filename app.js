@@ -2,7 +2,7 @@
 function main(msg) {
   switch (msg) {
     case /💬 чат лагеря/:
-      return: '🏘В Нью-Рино'
+      return '🏘В Нью-Рино'
     case /👣/:
       return actPath(msg)
     case /ты очень голоден/:
