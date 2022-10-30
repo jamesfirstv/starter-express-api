@@ -28,7 +28,8 @@ function actPath(msg) {
 function actFood() {
   let food = msg.match(/use_(\d{3})/)[1]
   switch (food) {
-    case 101: case 104: case 
+    case 101: case 104: case 117: case 119:
+    case 121: case 122: return '/use_'+food
   }
 }
 
