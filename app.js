@@ -1,15 +1,20 @@
 // Главный роутер
 function main(msg) {
   console.log('Респондер прислал:\n' + msg + '\n')
+
   if (msg.match(/💬 чат лагеря/))
     return '🏘В Нью-Рино'
+
   let parse = msg.match(/👣(\d+)км/)
   if (parse) parse = actPath(parse)
   if (parse) return parse
+
   if (msg.match(/ты очень голоден/))
     return '/myfood'
-  if (msg.match(/use_1[0-2]\d/))
-      return actFood(msg)
+  parse = msg.match(/use_(1[0-2])\d/)
+  if (parse) parse = actFood(msg)
+  if (parse)
+
   if (msg.match(/🤝передать \/givestuff/))
       return '/givestuff'
   if (
@@ -45,11 +50,12 @@ function actPath(parse) {
 
 // --------------------
 // Ветка жрачки
-function actFood() {
-  let food = Number(msg.match(/use_(\d{3})/)[1])
+function actFood(parse) {
+  let food = Number(parse[1])
   switch (food) {
     case 101: case 104: case 117: case 119:
     case 121: case 122: return '/use_'+food
+    default: false
   }
 }
 
