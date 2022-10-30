@@ -12,7 +12,7 @@ function main(msg) {
   if (msg.match(/ты очень голоден/))
     return '/myfood'
   parse = msg.match(/use_(1[0-2]\d)/)
-  if (parse) parse = actFood(msg)
+  if (parse) parse = actFood(parse)
   if (parse) return parse
 
   if (msg.match('🤝передать /givestuff'))
