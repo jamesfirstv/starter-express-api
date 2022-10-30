@@ -31,7 +31,7 @@ function main(msg) {
 // --------------------
 // Ветка километража
 function actPath(msg) {
-  let x = Int(msg.match(/👣(\d)+км/)[1])
+  let x = Number(msg.match(/👣(\d)+км/)[1])
   switch (x) {
     case 2: return '👣Идти дaльше'
     case 22: return '🚷В Темную зону'
@@ -44,11 +44,11 @@ function actPath(msg) {
 // --------------------
 // Ветка жрачки
 function actFood() {
-//  let food = Int(msg.match(/use_(\d{3})/)[1])
+//  let food = Number(msg.match(/use_(\d{3})/)[1])
   let usl = /regExp/
   let arrFood = msg.match(usl)
   let want = arrFood[1]
-  let food = Int(want)
+  let food = Number(want)
   switch (food) {
     case 101: case 104: case 117: case 119:
     case 121: case 122: return '/use_'+food
