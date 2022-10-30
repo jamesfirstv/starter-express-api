@@ -4,8 +4,8 @@ function main(msg) {
   if (msg.match(/💬 чат лагеря/))
     return '🏘В Нью-Рино'
   let parse = msg.match(/👣(\d+)км/)
-  if (parse)
-    return actPath(parse)
+  if (parse) parse = actPath(parse)
+  if (parse) return parse
   if (msg.match(/ты очень голоден/))
     return '/myfood'
   if (msg.match(/use_1[0-2]\d/))
@@ -39,6 +39,7 @@ function actPath(parse) {
     case 52: return '🚷В Темную зону'
     case 63: return '/voevat_suda'
     case 74: case 75: return '⛺️Вернуться<#>Вернуться в лагерь'
+    default: return false
   }
 }
 
