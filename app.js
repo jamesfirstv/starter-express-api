@@ -1,5 +1,5 @@
 function main(req) {
-  return req.query.message
+  return req.query.message+1
 }
 
 // ====================
