@@ -1,9 +1,6 @@
 function main(req, res) {
-  res.send(JSON.stringify({"replies": [
-		{"message": "Success ✅"}
-  ]}))
-  console.log(req.body)
-//  res.send(JSON.stringify(req))
+  console.log(req.body.query.message)
+  return "Success ✅"
 }
 
 // ====================
