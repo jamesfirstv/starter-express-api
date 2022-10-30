@@ -7,7 +7,7 @@ function main(msg) {
     return actPath(msg)
   if (msg.match(/ты очень голоден/))
     return '/myfood'
-  if (msg.match(/use_1[0-2]\d/)
+  if (msg.match(/use_1[0-2]\d/))
       return actFood(msg)
   if (msg.match(/🤝передать \/givestuff/))
       return '/givestuff'
