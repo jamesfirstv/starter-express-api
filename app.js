@@ -3,7 +3,8 @@ function main(msg) {
   console.log('Респондер прислал:\n' + msg + '\n')
   if (msg.match(/💬 чат лагеря/))
     return '🏘В Нью-Рино'
-  if (let parse = msg.match(/👣(\d)+км/))
+  let parse = msg.match(/👣(\d)+км/)
+  if (parse)
     return actPath(parse)
   if (msg.match(/ты очень голоден/))
     return '/myfood'
