@@ -74,12 +74,12 @@ function actClean(msg) {
     'Электромеч'
   ]
 
-  i = 0
-  let found = false
+  let i = 0
   let parse
   do {
     parse = msg.match(RegExp(badGoods[i]+'.*\/dl_(\d+)'))
-  } while (
+    i++
+  } while (!parse)
   
 }
 
