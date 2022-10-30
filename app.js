@@ -15,7 +15,11 @@ function main(msg) {
 function actPath(msg) {
   let x = msg.match(/👣(\d)+км/)[1]
   switch (x) {
-    case 2:
+    case 2: return '👣Идти дaльше'
+    case 22: return '🚷В Темную зону'
+    case 27: return '/mystuff'
+    case 54: return '/voevat_suda'
+    case 
   }
 }
 
