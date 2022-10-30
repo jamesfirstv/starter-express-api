@@ -23,7 +23,7 @@ function main(msg) {
   if (msg.match('Ты очень голоден'))
     return '/myfood'
   parse = msg.match(/\/use_1[0-2]\d/g)
-  if (parse) return actFood(parse)
+  if (parse) return parse[0]
 
   if (msg.match('🤝передать /givestuff'))
       return '/givestuff'
@@ -46,19 +46,6 @@ function actPath(parse) {
     case 63: return '/voevat_suda'
     case 74: case 75: return '⛺️Вернуться<#>Вернуться в лагерь'
     default: return false
-  }
-}
-
-// --------------------
-// Ветка жрачки
-function actFood(parse) {
-  const eat = [101, ]
-
-
-  let food = Number(parse[1])
-  switch (food) {
-    case 101: case 104: case 117: case 119:
-    case 121: case 122: return '/use_'+food
   }
 }
 
