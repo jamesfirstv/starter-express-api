@@ -1,10 +1,10 @@
 function main(msg) {
   switch (msg) {
-    case /👣/:
-      return actPath(msg)
+    case /👣/: return actPath(msg)
     case /ты очень голоден/:
       return actFoodCheck()
-    case 
+    case /use_1[1-2]\d/:
+      return actFoodEat(msg)
   }
   return msg+1
 }
@@ -17,6 +17,9 @@ function actPath(msg) {
 
 // --------------------
 // Ветка жрачки
+function actFoodCheck() {
+  return
+}
 
 // ====================
 // Подготовка сервера
