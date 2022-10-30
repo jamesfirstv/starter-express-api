@@ -5,20 +5,16 @@ function main(msg) {
     return '🏘В Нью-Рино'
   if (msg.match(/👣/))
     return actPath(msg)
-  if (msg.match(/👣/))
-    return actPath(msg)
-
-  switch (msg) {
-    case /💬 чат лагеря/:
-      return '🏘В Нью-Рино'
-    case '👣':
-      return actPath(msg)
-    case /ты очень голоден/:
-      return '/myfood'
+  if (msg.match(/ты очень голоден/))
+    return '/myfood'
+  if (msg.match(/use_1[0-2]\d/):
+      return actFood(msg)
+  if (msg.match(/🤝передать \/givestuff/))
+      return '/givestuff'
+      
     case /use_1[0-2]\d/:
       return actFood(msg)
-    case /🤝передать \/givestuff/:
-      return '/givestuff'
+    
     case /ты не сможешь увильнуть от противника/:
     case /во время вылазки на тебя напал/:
       return '⚔️Дать отпор'
