@@ -34,7 +34,9 @@ function main(msg) {
   ) return '⚔️Дать отпор'
 
   if (msg.match('Путь займёт несколько минут'))
-    return '/
+    return '/cstock'
+  if (msg.match('/dl_'))
+    return actClean(msg)
 }
 
 // --------------------
@@ -50,6 +52,12 @@ function actPath(parse) {
     case 74: case 75: return '⛺️Вернуться<#>Вернуться в лагерь'
     default: return false
   }
+}
+
+// --------------------
+// Ветка очистки
+function actClean(msg) {
+  
 }
 
 // ====================
