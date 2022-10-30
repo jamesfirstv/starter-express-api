@@ -1,3 +1,4 @@
+// Главный роутер
 function main(msg) {
   switch (msg) {
     case /👣/:
@@ -6,8 +7,9 @@ function main(msg) {
       return '/myfood'
     case /use_1[1-2]\d/:
       return actFood(msg)
+    case /🤝передать \/givestuff/:
+      return '/givestuff'
   }
-  return msg+1
 }
 
 // --------------------
