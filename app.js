@@ -74,7 +74,7 @@ function actClean(msg) {
     'Электромеч'
   ]
 
-  
+  msg.match(RegExp())
 }
 
 // ====================
