@@ -2,7 +2,6 @@
 function main(msg) {
   switch (msg) {
     case /💬 чат лагеря/:
-    case /🚫 недостаточно ресурсов!/:
       return: '🏘В Нью-Рино'
     case /👣/:
       return actPath(msg)
@@ -24,6 +23,7 @@ function main(msg) {
     case /водохранилище\n 🕳+/:
     case /датацентр\n 🕳+/:
       return '👣Идти дaльше'
+    case /
   }
 }
 
@@ -34,9 +34,9 @@ function actPath(msg) {
   switch (x) {
     case 2: return '👣Идти дaльше'
     case 22: return '🚷В Темную зону'
-    case 27: return '/mystuff'
-    case 54: return '/voevat_suda'
-    case 64: case 65: return '⛺️Вернуться<#>Вернуться в лагерь'
+    case 52: return '🚷В Темную зону'
+    case 63: return '/voevat_suda'
+    case 74: case 75: return '⛺️Вернуться<#>Вернуться в лагерь'
   }
 }
 
