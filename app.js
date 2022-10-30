@@ -1,6 +1,12 @@
 // Главный роутер
 function main(msg) {
   console.log('Респондер прислал:\n' + msg + '\n')
+  if (msg.match(/💬 чат лагеря/))
+    return '🏘В Нью-Рино'
+  if (msg.match(/👣/))
+    return actPath(msg)
+  if (msg.match(/👣/))
+    return actPath(msg)
 
   switch (msg) {
     case /💬 чат лагеря/:
