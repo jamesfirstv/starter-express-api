@@ -1,5 +1,6 @@
 // Главный роутер
 function main(msg) {
+  console.log(msg)
   switch (msg) {
     case /💬 чат лагеря/:
       return '🏘В Нью-Рино'
@@ -61,7 +62,6 @@ const app        = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.all('*', (req, res) => {
-  console.log(req.body)
   res.send(JSON.stringify({"replies": [
     {"message": main(req.body.query.message)}
   ]}))
