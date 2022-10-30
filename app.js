@@ -1,6 +1,7 @@
 // Главный роутер
 function main(msg) {
-  console.log(msg)
+  console.log('Респондер прислал:\n' + msg + '\n')
+
   switch (msg) {
     case /💬 чат лагеря/:
       return '🏘В Нью-Рино'
@@ -44,11 +45,7 @@ function actPath(msg) {
 // --------------------
 // Ветка жрачки
 function actFood() {
-//  let food = Number(msg.match(/use_(\d{3})/)[1])
-  let usl = /regExp/
-  let arrFood = msg.match(usl)
-  let want = arrFood[1]
-  let food = Number(want)
+  let food = Number(msg.match(/use_(\d{3})/)[1])
   switch (food) {
     case 101: case 104: case 117: case 119:
     case 121: case 122: return '/use_'+food
