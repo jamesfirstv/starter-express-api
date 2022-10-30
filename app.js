@@ -57,6 +57,7 @@ function actPath(parse) {
 // --------------------
 // Ветка очистки
 function actClean(msg) {
+  console.log('actClean')
   const badGoods = [
     'BFGzzv-4000',
     'Боевая броня',
