@@ -53,6 +53,9 @@ function actPath(parse) {
 // --------------------
 // Ветка жрачки
 function actFood(parse) {
+  const eat = [101, ]
+
+
   let food = Number(parse[1])
   switch (food) {
     case 101: case 104: case 117: case 119:
