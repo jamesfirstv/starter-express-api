@@ -77,8 +77,8 @@ function actClean(msg) {
 
   let parse
   for (let i=0; i<badGoods.length; i++) {
-    console.log(i+': '+badGoods[i]+'.*(\/dl_\\d+)'+'\n')
-    parse = msg.match(new RegExp(badGoods[i]+'.*(\/dl_\d+)'))
+    console.log(i+': '+badGoods[i]+'.*(\\/dl_\\d+)'+'\n')
+    parse = msg.match(new RegExp(badGoods[i]+'.*(\\/dl_\\d+)'))
     if (parse) break
   }
   if (parse) return parse[1]
