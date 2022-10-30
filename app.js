@@ -1,5 +1,5 @@
-function main(req) {
-  return req.query.message+1
+function main(msg) {
+  return msg+1
 }
 
 // ====================
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.all('*', (req, res) => {
   res.send(JSON.stringify({"replies": [
-		{"message": main(req.body)}
+		{"message": main(req.body.query.message)}
   ]}))
 })
 app.listen(process.env.PORT || 3000)
