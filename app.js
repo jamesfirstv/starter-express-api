@@ -59,7 +59,6 @@ function actFood(parse) {
   switch (food) {
     case 101: case 104: case 117: case 119:
     case 121: case 122: return '/use_'+food
-    default: false
   }
 }
 
