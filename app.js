@@ -57,7 +57,7 @@ function actPath(parse) {
 // --------------------
 // Ветка очистки
 function actClean(msg) {
-  console.log('actClean')
+  console.log('actClean:\n')
   const badGoods = [
     'BFGzzv-4000',
     'Боевая броня',
@@ -77,6 +77,7 @@ function actClean(msg) {
 
   let parse
   for (let i=0; i<badGoods.length; i++) {
+    console.log(i+'\n')
     parse = msg.match(new RegExp(badGoods[i]+'.*(\/dl_\d+)'))
     if (parse) break
   }
