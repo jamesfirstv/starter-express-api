@@ -61,7 +61,7 @@ function actPath(parse) {
   switch (x) {
     case 2: return '👣Идти дaльше'
     case 22: return '🚷В Темную зону'
-//    case 52: return '🚷В Темную зону'
+//    case 58: return '🚷В Темную зону'
     case 54: return '/voevat_suda'
     case 74: case 75: return '⛺️Вернуться<#>Вернуться в лагерь'
     default: return false
