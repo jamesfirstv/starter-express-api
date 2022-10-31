@@ -9,6 +9,9 @@ function main(msg) {
   if (parse) parse = actPath(parse)
   if (parse) return parse
 
+  if (msg.match('/view'))
+    return '👣Идти дaльше'
+
   if (
     msg.match('/view')
     || msg.match(/ты одержал победу!/)
@@ -18,15 +21,17 @@ function main(msg) {
     || msg.match(/\(без банды\)/)
     || msg.match(/водохранилище\n 🕳+/)
     || msg.match(/датацентр\n 🕳+/)
-  ) return '👣Идти дaльше'
+  ) return '🔎Дeйствие'
 
-  if (msg.match('Ты очень голоден'))
+  if (msg.match('Ты очень голоден.'))
     return '/myfood'
   parse = msg.match(/\/use_1[0-2]\d/g)
   if (parse) return parse[0]
 
-  if (msg.match('🤝передать /givestuff'))
-      return '/givestuff'
+  if (msg.match('Ты встретил бродячего торговца,'))
+      return '/buy_5i<#>🔎Дeйствие'
+      
+  if (msg.match('
 
   if (
     msg.match(/ты не сможешь увильнуть от противника/)
