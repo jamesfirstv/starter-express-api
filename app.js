@@ -27,7 +27,7 @@ function main(msg) {
     || msg.match('и его')
     || msg.match('\n🐐')
     || msg.match('\s🤘')
-    || msg.match('\(без банды\)')
+    || msg.match('(без банды)')
     || msg.match('водохранилище\n 🕳+')
     || msg.match('датацентр\n 🕳+')
   ) return '🔎Дeйствие'
@@ -63,7 +63,7 @@ function actPath(parse) {
     case 2: return '👣Идти дaльше'
     case 22: return '🚷В Темную зону'
 //    case 58: return '🚷В Темную зону'
-    case 54: return '/voevat_suda'
+    case 20: return '/voevat_suda'
     case 74: case 75: return '⛺️Вернуться<#>Вернуться в лагерь'
     default: return false
   }
