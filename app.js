@@ -92,8 +92,8 @@ function actClean(msg) {
   for (let i=0; i<badGoods.length; i++) {
     parse = msg.match(new RegExp(badGoods[i]+'.*(\\/dl_\\d+)'))
     if (parse) break
-  }
   if (parse) return parse[1]
+  }
 }
 
 // ====================
