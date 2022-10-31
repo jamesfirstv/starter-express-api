@@ -38,7 +38,7 @@ function main(msg) {
   if (parse) return parse[0]
   
   parse = msg.match(/\/del_[0-1]\d/g)
-  if (parse) return parse[0]
+  if (parse) return parse[1]
 
   if (msg.match('Ты встретил бродячего торговца,'))
       return '/buy_5i<#>🔎Дeйствие'
