@@ -47,8 +47,6 @@ function main(msg) {
     || msg.match(/во время вылазки на тебя напал/)
   ) return '⚔️Дать отпор'
 
-  if (msg.match('Путь займёт несколько минут'))
-    return '/cstock'
   if (msg.match('/dl_'))
     return actClean(msg)
 }
