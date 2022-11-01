@@ -70,7 +70,7 @@ function actPath(parse) {
     case 22: return '🚷В Темную зону'
     case 52: return '🚷В Темную зону'
 //    case 50: return '/mystuff'
-//    case 63: return '/voevat_suda'
+    case 20: return '/voevat_suda'
     case 68: case 69: return '⛺️Вернуться<#>Вернуться в лагерь'
     default: return false
   }
