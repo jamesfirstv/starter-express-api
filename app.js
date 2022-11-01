@@ -24,7 +24,7 @@ function main(msg) {
   if (
     msg.match('Ты съел ')
     || msg.match('Ты одержал победу!')
-    || msg.match('и его')
+    || msg.match(' и его')
     || msg.match('\n🐐')
     || msg.match('\s🤘')
     || msg.match('(без банды)')
