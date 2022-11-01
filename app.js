@@ -116,7 +116,7 @@ app.all('*', (req, res) => {
   let msg = req.body.query.message
   console.log('Респондер прислал:\n' + msg + '\n---\n')
   let ans = main(msg)
-  console.log('Мы отвечаем: ' + ans + '\n')
+  console.log('Мы отвечаем: ' + ans + '\n---\n')
   res.send(JSON.stringify({"replies": [{"message": ans}]}))
 })
 app.listen(process.env.PORT || 3000)
