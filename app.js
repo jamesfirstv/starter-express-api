@@ -1,7 +1,5 @@
 // Главный роутер
 function main(msg) {
-  console.log('Респондер прислал:\n' + msg + '\n')
-
   if (msg.match('Чат лагеря'))
     return '🏘В Нью-Рино'
 
@@ -115,6 +113,10 @@ const app        = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.all('*', (req, res) => {
+  let msg = req.body.query.message
+  console.log('Респондер прислал:\n' + msg + '\n')
+  let ans = main(msg)
+  console.log('Мы отвечаем: ' + ans)
   res.send(JSON.stringify({"replies": [
     {"message": main(req.body.query.message)}
   ]}))
