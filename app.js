@@ -54,7 +54,7 @@ function main(msg) {
     return actClean(msg)
   parse = msg.match(/\/del_\d+/)
   if (parse)
-    return 
+    return parse[0]
 }
 
 // --------------------
