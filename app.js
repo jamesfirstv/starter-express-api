@@ -52,6 +52,9 @@ function main(msg) {
 
   if (msg.match('/dl_'))
     return actClean(msg)
+  parse = msg.match(/\/del_\d+/)
+  if (parse)
+    return 
 }
 
 // --------------------
