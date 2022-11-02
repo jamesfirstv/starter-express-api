@@ -10,8 +10,8 @@ const mtproto  = new MTProto({
 
 // 2. Print the user country code
 mtproto.call('help.getNearestDc').then(result => {
-  console.log('country:', result.country);
-});
+  console.log('country:', result.country)
+})
 
 
 
