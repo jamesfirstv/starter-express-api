@@ -7,7 +7,6 @@
   "author": "Yog",
   "license": "asis",
   "dependencies": {
-    "express": "^4.17.1",
-    "body-parser": "1.19.0"
+    "@mtproto/core": "^6.2.0"
   }
 }
