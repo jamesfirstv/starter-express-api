@@ -1,14 +1,26 @@
-const MTProto = require('@mtproto/core');
+const MTProto     = require('@mtproto/core')
+const tempStorage = require('@mtproto/core/src/storage/temp')
+const api_id      = YOU_API_ID
+const api_hash    = YOU_API_HASH
 
-const tempStorage = require('@mtproto/core/src/storage/temp');
+new MTProto({storageOptions: {instance: tempStorage}})
 
-new MTProto({
+
+
+// 1. Create instance
+const mtproto = new MTProto({
+  api_id,
+  api_hash,
+
   storageOptions: {
-    instance: tempStorage,
+    path: path.resolve(__dirname, './data/1.json'),
   },
 });
 
-
+// 2. Print the user country code
+mtproto.call('help.getNearestDc').then(result => {
+  console.log('country:', result.country);
+});
 
 
 
