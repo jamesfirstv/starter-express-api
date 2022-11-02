@@ -1,3 +1,6 @@
+
+
+/*
 // Главный роутер
 function main(msg) {
   if (msg.match('Чат лагеря'))
@@ -121,3 +124,5 @@ app.all('*', (req, res) => {
   res.send(JSON.stringify({"replies": [{"message": ans}]}))
 })
 app.listen(process.env.PORT || 3000)
+*/
+
