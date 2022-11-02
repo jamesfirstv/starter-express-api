@@ -1,6 +1,12 @@
 const MTProto = require('@mtproto/core');
 
+const tempStorage = require('@mtproto/core/src/storage/temp');
 
+new MTProto({
+  storageOptions: {
+    instance: tempStorage,
+  },
+});
 
 
 
