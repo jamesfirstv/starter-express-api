@@ -10,6 +10,7 @@
   "author": "Yog",
   "license": "asis",
   "dependencies": {
+    "cyclic-dynamodb": "^0.0.27",
     "@mtproto/core": "^6.2.0"
   }
 }
