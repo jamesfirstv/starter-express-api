@@ -65,7 +65,7 @@ function main(msg) {
 
 // --------------------
 // Ветка километража
-function actPath(parse) {
+function actPath(parse, dark) {
   let x = Number(parse[1])
 
   switch (x) {
