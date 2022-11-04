@@ -42,7 +42,7 @@ function main(msg) {
     return '/buy_5i<#>/view'
 
   if (
-    msg.match('/view')
+    msg.match('Ты оценил обстановку вокруг.')
     || msg.match('Ты огляделся вокруг себя.')
     || msg.match('Рейд в 01:00')
     || msg.match('Рейд в 9:00')
