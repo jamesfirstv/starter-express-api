@@ -56,7 +56,7 @@ function main(msg) {
     || msg.match('(без банды)')
     || msg.match('водохранилище\n 🕳+')
     || msg.match('датацентр\n 🕳+')
-  ) return '🔎Дeйствие'
+  ) return '/view'
 
   if (msg.match('Ты очень голоден.'))
     return '/myfood'
