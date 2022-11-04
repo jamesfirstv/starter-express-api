@@ -138,7 +138,7 @@ function actClean(msg) {
     'Хлыст',
     'Электромеч'
   ]
-
+//
   let parse
   for (let i=0; i<badGoods.length; i++) {
     parse = msg.match(new RegExp(badGoods[i]+'.*(\\/dl_\\d+)'))
