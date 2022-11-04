@@ -25,6 +25,9 @@ function main(msg) {
   if (parse) parse = actPath(parse)
   if (parse) return parse
 
+  if (msg.match('Ты встретил бродячего торговца,'))
+      return '/buy_5i<#>🔎Дeйствие'
+
   if (msg.match('/view'))
     return '👣Идти дaльше'
 
@@ -47,13 +50,6 @@ function main(msg) {
     return '/myfood'
   parse = msg.match(/\/use_1[0-2]\d/g)
   if (parse) return parse[0]
-  
-
-
-  if (msg.match('Ты встретил бродячего торговца,'))
-      return '/buy_5i<#>🔎Дeйствие'
-      
-
 
   
   if (msg.match('/dl_'))
