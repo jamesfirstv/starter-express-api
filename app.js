@@ -89,7 +89,7 @@ function actPath(parse, light=true) {
     }
   } else {
     switch (x) {
-      case 56: return '🔬Научный комплекс<#>Двигаться дальше'
+      case 35: return '🔬Научный комплекс<#>Двигаться дальше'
       default: return false
     }
   }
