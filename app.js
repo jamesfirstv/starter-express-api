@@ -26,6 +26,12 @@ function main(msg) {
   parse = msg.match(/👣(\d+)км/)
   if (parse) parse = actPath(parse)
   if (parse) return parse
+  parse = msg.match(/👣(\d+)\sкм/)
+  if (parse) parse = actPath(parse)
+  if (parse) return parse
+  parse = msg.match(/🚷(\d+)\sкм/)
+  if (parse) parse = actPath(parse, false)
+  if (parse) return parse
 
   if (msg.match('Ты встретил бродячего торговца,'))
       return '/buy_5i<#>🔎Дeйствие'
