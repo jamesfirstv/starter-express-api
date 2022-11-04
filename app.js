@@ -34,10 +34,11 @@ function main(msg) {
   if (parse) return parse
 
   if (msg.match('Ты встретил бродячего торговца,'))
-      return '/buy_5i<#>🔎Дeйствие'
+      return '/buy_5i<#>/view'
 
   if (
     msg.match('/view')
+    || msg.match('Ты огляделся вокруг себя.')
     || msg.match('Рейд в 01:00')
     || msg.match('Рейд в 9:00')
     || msg.match('Рейд в 17:00')
@@ -89,7 +90,7 @@ function actPath(parse, light=true) {
     }
   } else {
     switch (x) {
-      case 35: return '🔬Научный комплекс<#>Двигаться дальше'
+      case 56: return '🔬Научный комплекс<#>Двигаться дальше'
       default: return false
     }
   }
