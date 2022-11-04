@@ -25,19 +25,19 @@ function main(msg) {
     || msg.match('Во время вылазки на тебя напал')
   ) return '⚔️Дать отпор'
 
-  let parse = msg.match(/🚷.*\n.*👣(\d+)км/)
+  let parse = msg.match(/🚷[\s\S]*👣(\d+)км/)
   if (parse) parse = actPath(parse, false)
   if (parse) return parse
-  parse = msg.match(/🚷.*(\d+)км/)
+//  parse = msg.match(/🚷.*(\d+)км/)
+//  if (parse) parse = actPath(parse, false)
+//  if (parse) return parse
+//  parse = msg.match(/👣(\d+)км/)
+//  if (parse) parse = actPath(parse)
+//  if (parse) return parse
+  parse = msg.match(/🚷.*(\d+)\s?км/)
   if (parse) parse = actPath(parse, false)
   if (parse) return parse
-  parse = msg.match(/👣(\d+)км/)
-  if (parse) parse = actPath(parse)
-  if (parse) return parse
-  parse = msg.match(/🚷(\d+)\sкм/)
-  if (parse) parse = actPath(parse, false)
-  if (parse) return parse
-  parse = msg.match(/👣(\d+)\sкм/)
+  parse = msg.match(/👣(\d+)\s?км/)
   if (parse) parse = actPath(parse)
   if (parse) return parse
 
