@@ -70,15 +70,22 @@ function main(msg) {
 function actPath(parse, light=true) {
   let x = Number(parse[1])
 
-  switch (x) {
-    case 2: return '👣Идти дaльше'
-    case 22: return '🚷В Темную зону'
-    case 51: return '🛏Безопасный привал<#>/deeprest'
-    case 52: return '🚷В Темную зону'
-//    case 50: return '/mystuff'
-//    case 54: return '/voevat_suda'
-    case 68: case 69: return '⛺️Вернуться<#>Вернуться в лагерь'
-    default: return false
+  if (light) {
+    switch (x) {
+      case 2: return '👣Идти дaльше'
+      case 22: return '🚷В Темную зону'
+      case 51: return '🛏Безопасный привал<#>/deeprest'
+      case 52: return '🚷В Темную зону'
+//      case 50: return '/mystuff'
+//      case 54: return '/voevat_suda'
+      case 68: case 69: return '⛺️Вернуться<#>Вернуться в лагерь'
+      default: return false
+    }
+  } else {
+    switch (x) {
+//      case 2: return '👣Идти дaльше'
+      default: return false
+    }
   }
 }
 
