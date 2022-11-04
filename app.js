@@ -23,6 +23,8 @@ function main(msg) {
 
   let parse = msg.match(/👣(\d+)км/)
   if (parse) parse = actPath(parse)
+  let parse = msg.match(/👣(\d+)км/)
+  if (parse) parse = actPath(parse, false)
   if (parse) return parse
 
   if (msg.match('Ты встретил бродячего торговца,'))
@@ -65,7 +67,7 @@ function main(msg) {
 
 // --------------------
 // Ветка километража
-function actPath(parse, dark) {
+function actPath(parse, light=true) {
   let x = Number(parse[1])
 
   switch (x) {
