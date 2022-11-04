@@ -52,6 +52,7 @@ function main(msg) {
 
   if (
     msg.match('Ты съел ')
+    || msg.match('/view')
     || msg.match('Ты одержал победу!')
     || msg.match('Ты готов снова отправиться в Пустошь!')
     || msg.match(' и его')
