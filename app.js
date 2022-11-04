@@ -20,11 +20,11 @@ function main(msg) {
     || msg.match('Во время вылазки на тебя напал')
   ) return '⚔️Дать отпор'
 
-
+  let parse = msg.match(/🚷.*👣(\d+)км/)
+  if (parse) parse = actPath(parse, false)
+  if (parse) return parse
   let parse = msg.match(/👣(\d+)км/)
   if (parse) parse = actPath(parse)
-  let parse = msg.match(/👣(\d+)км/)
-  if (parse) parse = actPath(parse, false)
   if (parse) return parse
 
   if (msg.match('Ты встретил бродячего торговца,'))
