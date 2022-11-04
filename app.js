@@ -96,9 +96,9 @@ function actPath(parse, light=true) {
       case 45: return '🌁Высокий Хротгар<#>Двигаться дальше'
       case 50: return '🛑Руины Гексагона<#>Двигаться дальше'
       case 51: return '🛏Безопасный привал<#>/deeprest'
-//      case 52: return '🚷В Темную зону'
+      case 52: return '🚷В Темную зону'
 //      case 50: return '/mystuff'
-      case 54: return '/voevat_suda'
+//      case 54: return '/voevat_suda'
       case 68: case 69: return '⛺️Вернуться<#>Вернуться в лагерь'
       default: return false
     }
