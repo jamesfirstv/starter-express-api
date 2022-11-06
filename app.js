@@ -9,10 +9,13 @@ const run = async function() {
     let animals = db.collection('settings')
 
     // create an item in collection with key "leo"
-    let leo = await animals.set('tgApiId', '')
+    let id = await animals.set('tgApiId', '')
+    let hash = await animals.set('tgApiHash', '')
 
     // get an item at key "leo" from collection animals
-    let item = await animals.get('leo')
+    let item = await animals.get('tgApiId')
+    console.log(item)
+    item = await animals.get('tgApiHash')
     console.log(item)
 }
 run()
