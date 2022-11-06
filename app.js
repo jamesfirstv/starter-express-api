@@ -1,6 +1,7 @@
 const CyclicDB = require('cyclic-dynamodb')
-const db = CyclicDB('your-table-name')
+//const db = CyclicDB('your-table-name')
 
+/*
 const run = async function(){
     let animals = db.collection('animals')
 
@@ -15,7 +16,7 @@ const run = async function(){
     console.log(item)
 }
 run()
-
+*/
 
 /*
 const MTProto  = require('@mtproto/core')
