@@ -1,5 +1,6 @@
 const CyclicDB = require('cyclic-dynamodb')
 //const db = CyclicDB('your-table-name')
+console.log('ok')
 
 /*
 const run = async function(){
