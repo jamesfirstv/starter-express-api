@@ -17,7 +17,7 @@ const run = async function(){
 run()
 
 
-
+/*
 const MTProto  = require('@mtproto/core')
 const tempStor = require('@mtproto/core/src/storage/temp')
 const api_id   = YOU_API_ID
@@ -32,7 +32,7 @@ const mtproto  = new MTProto({
 mtproto.call('help.getNearestDc').then(result => {
   console.log('country:', result.country)
 })
-
+*/
 
 
 
