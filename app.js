@@ -4,16 +4,12 @@ const dbName = 'apricot-calf-garbCyclicDB'
 // Подключаем базу данных
 const CyclicDB = require('cyclic-dynamodb')
 const db = CyclicDB(dbName)
-console.log('ok!')
 
 const run = async function() {
-    let animals = db.collection('animals')
+    let animals = db.collection('settings')
 
     // create an item in collection with key "leo"
-    let leo = await animals.set('leo', {
-        type:'cat',
-        color:'orange'
-    })
+    let leo = await animals.set('tgApiId', '')
 
     // get an item at key "leo" from collection animals
     let item = await animals.get('leo')
