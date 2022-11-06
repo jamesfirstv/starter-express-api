@@ -2,8 +2,7 @@ const CyclicDB = require('cyclic-dynamodb')
 const db = CyclicDB('apricot-calf-garbCyclicDB')
 console.log('ok!')
 
-/*
-const run = async function(){
+const run = async function() {
     let animals = db.collection('animals')
 
     // create an item in collection with key "leo"
@@ -17,7 +16,7 @@ const run = async function(){
     console.log(item)
 }
 run()
-*/
+
 
 /*
 const MTProto  = require('@mtproto/core')
