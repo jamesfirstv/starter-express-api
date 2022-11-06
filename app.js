@@ -20,6 +20,7 @@ const run = async function() {
     console.log(item)
 }
 run()
+console.log('==========')
 
 
 /*
