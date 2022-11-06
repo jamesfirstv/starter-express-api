@@ -1,7 +1,7 @@
 // Настройки от хостера
 const dbName = 'apricot-calf-garbCyclicDB'
 
-
+// Подключаем базу данных
 const CyclicDB = require('cyclic-dynamodb')
 const db = CyclicDB(dbName)
 console.log('ok!')
