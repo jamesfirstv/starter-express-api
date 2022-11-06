@@ -1,5 +1,9 @@
+// Настройки от хостера
+const dbName = 'apricot-calf-garbCyclicDB'
+
+
 const CyclicDB = require('cyclic-dynamodb')
-const db = CyclicDB('apricot-calf-garbCyclicDB')
+const db = CyclicDB(dbName)
 console.log('ok!')
 
 const run = async function() {
