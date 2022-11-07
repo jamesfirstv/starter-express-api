@@ -18,7 +18,7 @@ const run1     = async function() {
 run1()
 
 // Дальше во втором потоке цепляемся за ТГ
-const mtproto = null
+var mtproto = null
 const run2    = function(tgApi) {
   console.log(tgApi)
   console.log('=======')
