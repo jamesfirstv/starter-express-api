@@ -16,7 +16,7 @@ const run1     = async function() {
   console.log(item)
 //  run2({id: item.props.id, hash: item.props.hash})
 }
-while (true) new Date()
+//while (true) new Date()
 
 // Дальше во втором потоке цепляемся за ТГ
 const mtproto = null
