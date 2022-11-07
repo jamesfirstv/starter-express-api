@@ -15,22 +15,22 @@ const run1     = async function() {
 }
 
 // Дальше во втором потоке цепляемся за ТГ
-
-/*
-
-const api_id   = YOU_API_ID
-const api_hash = YOU_API_HASH
-const mtproto  = new MTProto({
-  api_id, api_hash,
-  storageOptions: {instance: tempStor}
-})
+const mtproto
+const run2    = function(tgApi) {
+  mtproto = new MTProto({
+    tgApi.id, tgApi.hash,
+    storageOptions: {instance: TempStor}
+  })
 
 
 // 2. Print the user country code
 mtproto.call('help.getNearestDc').then(result => {
   console.log('country:', result.country)
 })
-*/
+}
+
+
+
 
 
 
