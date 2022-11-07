@@ -18,6 +18,8 @@ const run1     = async function() {
 // Дальше во втором потоке цепляемся за ТГ
 const mtproto = null
 const run2    = function(tgApi) {
+  console.log(tgApi)
+  console.log('=======™')
   mtproto = new MTProto({
     tgApi.id, tgApi.hash,
     storageOptions: {instance: TempStor}
