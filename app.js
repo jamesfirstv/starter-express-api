@@ -16,7 +16,7 @@ const run1     = async function() {
 }
 
 // Дальше во втором потоке цепляемся за ТГ
-const mtproto
+const mtproto = null
 const run2    = function(tgApi) {
   mtproto = new MTProto({
     tgApi.id, tgApi.hash,
