@@ -9,8 +9,9 @@ const dbName = 'apricot-calf-garbCyclicDB'
 // Подключаем базу данных и асинхронно достаём реквизиты ТГ из БД во втором
 // потоке (первый пролетает по файлу насквозь, определяя константы)
 const db       = CyclicDB(dbName)
-const settings = db.collection('settings')
+
 const run1     = async function() {
+  const settings = db.collection('settings')
   let item = await settings.get('tgApi')
   console.log(item)
 //  run2({id: item.props.id, hash: item.props.hash})
