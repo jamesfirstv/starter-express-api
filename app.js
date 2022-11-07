@@ -25,7 +25,7 @@ const run2    = function(tgApi) {
   console.log(tgApi.id)
 /*
   mtproto = new MTProto({
-    tgApi.id, tgApi.hash,
+    api_id: tgApi.id, api_hash: tgApi.hash,
     storageOptions: {instance: TempStor}
   })
 
