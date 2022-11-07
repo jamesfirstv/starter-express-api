@@ -23,7 +23,7 @@ const run2    = function(tgApi) {
   console.log(tgApi)
   console.log('=======')
   console.log(tgApi.id)
-/*
+
   mtproto = new MTProto({
     api_id: tgApi.id, api_hash: tgApi.hash,
     storageOptions: {instance: TempStor}
@@ -33,7 +33,7 @@ const run2    = function(tgApi) {
   mtproto.call('help.getNearestDc').then(result => {
     console.log('country:', result.country)
   })
-*/
+
 }
 
 
