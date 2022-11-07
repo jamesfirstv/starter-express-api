@@ -6,16 +6,13 @@ const TempStor = require('@mtproto/core/src/storage/temp')
 // Настройки от хостера
 const dbName = 'apricot-calf-garbCyclicDB'
 
-// Подключаем базу данных
-
+// Подключаем базу данных и асинхронно достаём реквизиты ТГ из БД
 const db       = CyclicDB(dbName)
 const settings = db.collection('settings')
-
-// Асинхронно достаём реквизиты ТГ из БД
-const run = async function() {
+const run1     = async function() {
   let item   = await settings.get('tgApi')
-  let tgAuth = {id: item.props.id, hash: item.props.hash}
-  console.log(tgAuth)
+  let {id: item.props.id, hash: item.props.hash}
+  run2()
 }
 run()
 console.log('==========')
