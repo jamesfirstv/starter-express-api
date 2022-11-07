@@ -1,7 +1,7 @@
 // Грузим либы
 const CyclicDB = require('cyclic-dynamodb')
 const MTProto  = require('@mtproto/core')
-const tempStor = require('@mtproto/core/src/storage/temp')
+const TempStor = require('@mtproto/core/src/storage/temp')
 
 // Настройки от хостера
 const dbName = 'apricot-calf-garbCyclicDB'
