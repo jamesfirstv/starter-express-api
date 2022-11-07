@@ -6,9 +6,11 @@ const CyclicDB = require('cyclic-dynamodb')
 const db       = CyclicDB(dbName)
 const settings = db.collection('settings')
 
+// Достаём реквизиты ТГ из БД
 const run = async function() {
-    let item = await settings.get('tgApi')
-    console.log(item)
+  let item   = await settings.get('tgApi')
+  let tgAuth = {id: item.props.id, hash: item.props.hash}
+  console.log(tgAuth)
 }
 run()
 console.log('==========')
