@@ -19,7 +19,7 @@ const run1     = async function() {
 const mtproto = null
 const run2    = function(tgApi) {
   console.log(tgApi)
-  console.log('=======™')
+  console.log('=======')
 /*
   mtproto = new MTProto({
     tgApi.id, tgApi.hash,
