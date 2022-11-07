@@ -12,6 +12,7 @@ const db       = CyclicDB(dbName)
 const settings = db.collection('settings')
 const run1     = async function() {
   let item = await settings.get('tgApi')
+  console.log(item)
   run2({id: item.props.id, hash: item.props.hash})
 }
 
