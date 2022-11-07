@@ -22,6 +22,7 @@ const mtproto = null
 const run2    = function(tgApi) {
   console.log(tgApi)
   console.log('=======')
+  console.log(tgApi.id)
 /*
   mtproto = new MTProto({
     tgApi.id, tgApi.hash,
