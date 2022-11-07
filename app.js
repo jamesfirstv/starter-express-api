@@ -22,11 +22,10 @@ const run2    = function(tgApi) {
     storageOptions: {instance: TempStor}
   })
 
-
-// 2. Print the user country code
-mtproto.call('help.getNearestDc').then(result => {
-  console.log('country:', result.country)
-})
+  // 2. Print the user country code
+  mtproto.call('help.getNearestDc').then(result => {
+    console.log('country:', result.country)
+  })
 }
 
 
