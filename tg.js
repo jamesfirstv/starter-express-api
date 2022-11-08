@@ -2,7 +2,7 @@ const MTProto   = require('@mtproto/core')
 const TempStor  = require('@mtproto/core/src/storage/temp')
 const { sleep } = require('@mtproto/core/src/utils/common')
 
-class API {
+var API = class {
   constructor(id, hash) {
     this.mtproto = new MTProto({
       api_id: id, api_hash: hash,
