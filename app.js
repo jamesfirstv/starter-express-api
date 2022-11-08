@@ -1,6 +1,6 @@
 // Грузим либы
 const CyclicDB  = require('cyclic-dynamodb')
-const TgApi     = require('tg.js')
+const TgApi     = require('./tg.js')
 
 // Настройки
 global.cfg          = {}
