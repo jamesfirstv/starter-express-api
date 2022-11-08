@@ -7,10 +7,7 @@ class API {
     this.mtproto = new MTProto({
       api_id: YOU_API_ID,
       api_hash: YOU_API_HASH,
-
-      storageOptions: {
-        path: path.resolve(__dirname, './data/1.json'),
-      },
+      storageOptions: {instance: TempStor}
     })
   }
 
