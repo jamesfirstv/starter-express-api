@@ -3,10 +3,9 @@ const TempStor  = require('@mtproto/core/src/storage/temp')
 const { sleep } = require('@mtproto/core/src/utils/common')
 
 class API {
-  constructor() {
+  constructor(id, hash) {
     this.mtproto = new MTProto({
-      api_id: YOU_API_ID,
-      api_hash: YOU_API_HASH,
+      api_id: id, api_hash: hash,
       storageOptions: {instance: TempStor}
     })
   }
