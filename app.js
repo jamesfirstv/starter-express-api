@@ -18,10 +18,9 @@ const start = async function() {
   // Подключаемся к ТГ
   let tg = global.tg = new TgApi(api_id, hash)
 
-  // Запрос страны
-  mtproto.call('help.getNearestDc').then(result => {
-    console.log('country:', result.country)
-  })
+  // Ждем ответ на запрос страны
+  let dc = await tg.call('help.getNearestDc')
+  console.log('country:', dc.country)
 }
 start()
 
