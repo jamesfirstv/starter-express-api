@@ -2,7 +2,7 @@
 const CyclicDB  = require('cyclic-dynamodb')
 const MTProto   = require('@mtproto/core')
 const { sleep } = require('@mtproto/core/src/utils/common')
-const tgApi     = require('tg.js')
+const TgApi     = require('tg.js')
 
 // Настройки
 const dbName   = 'apricot-calf-garbCyclicDB'
