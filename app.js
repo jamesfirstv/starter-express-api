@@ -4,14 +4,18 @@ const { sleep } = require('@mtproto/core/src/utils/common')
 const TgApi     = require('tg.js')
 
 // Настройки
-const dbName   = 'apricot-calf-garbCyclicDB'
-const peerName = 'WastelandWarsBot'
+global.cfg = {}
+global.cfg.dbName   = 'apricot-calf-garbCyclicDB'
+global.cfg.peerName = 'WastelandWarsBot'
 
-// Подключаем базу данных и асинхронно достаём реквизиты ТГ из БД во втором
+// Подключаем базу данных
+global.db       = CyclicDB(dbName)
+
+//и асинхронно достаём реквизиты ТГ из БД во втором
 // потоке (первый пролетает по файлу насквозь, определяя константы)
 
 // 
-const db       = CyclicDB(dbName)
+
 const settings = db.collection('settings')
 const run1     = async function() {
   let item = await settings.get('tgApi')
