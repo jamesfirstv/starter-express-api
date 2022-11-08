@@ -18,7 +18,7 @@ const start = async function() {
   // Подключаемся к ТГ
   let tg = global.tg = new TgApi(api_id, hash)
 
-  // Ждем ответ на запрос страны
+  // Ждем ответ на запрос ближайшего ДЦ
   let dc = await tg.call('help.getNearestDc')
   console.log('country:', dc.country)
 }
