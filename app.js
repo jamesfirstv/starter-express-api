@@ -4,8 +4,9 @@ const MTProto   = require('@mtproto/core')
 const TempStor  = require('@mtproto/core/src/storage/temp')
 const { sleep } = require('@mtproto/core/src/utils/common')
 
-// Настройки от хостера
-const dbName = 'apricot-calf-garbCyclicDB'
+// Настройки
+const dbName   = 'apricot-calf-garbCyclicDB'
+const peerName = 'WastelandWarsBot'
 
 // Подключаем базу данных и асинхронно достаём реквизиты ТГ из БД во втором
 // потоке (первый пролетает по файлу насквозь, определяя константы)
