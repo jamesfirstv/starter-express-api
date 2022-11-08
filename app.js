@@ -4,7 +4,7 @@ const { sleep } = require('@mtproto/core/src/utils/common')
 const TgApi     = require('tg.js')
 
 // Настройки
-global.cfg = {}
+global.cfg          = {}
 global.cfg.dbName   = 'apricot-calf-garbCyclicDB'
 global.cfg.peerName = 'WastelandWarsBot'
 
