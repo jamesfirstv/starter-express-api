@@ -27,8 +27,6 @@ class API {
         const [type, dcIdAsString] = error.error_message.split('_MIGRATE_')
         const dcId = Number(dcIdAsString)
 
-        // If auth.sendCode call on incorrect DC need change default DC, because
-        // call auth.signIn on incorrect DC return PHONE_CODE_EXPIRED error
         if (type === 'PHONE') {
           await this.mtproto.setDefaultDc(dcId)
         } else {
