@@ -12,9 +12,7 @@ class API {
 
   async call(method, params, options = {}) {
     try {
-      const result = await this.mtproto.call(method, params, options)
-
-      return result
+      return await this.mtproto.call(method, params, options)
     } catch (error) {
       console.log(`${method} error:`, error)
 
