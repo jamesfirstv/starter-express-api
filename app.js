@@ -13,9 +13,10 @@ const start = async function() {
   // Подключаем базу данных
   global.db = CyclicDB(global.cfg.dbName)
   // Достаём таблицу настроек
-  var settings = global.db.collection('settings')
-  // Достаём реквизиты ТГ из таблицы
-   = await settings.get('tgApi')
+  let settings = global.db.collection('settings')
+  // Ждем реквизиты ТГ из таблицы
+  let {api_id, hash} = await settings.get('tgApi')
+
   console.log(item)
 }
 start()
