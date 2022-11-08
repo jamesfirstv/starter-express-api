@@ -11,17 +11,19 @@ global.cfg.peerName = 'WastelandWarsBot'
 // Асинхронная функция запуска
 const start = async function() {
   // Подключаем базу данных
-  global.db = CyclicDB(dbName)
-  // Достаём реквизиты ТГ из БД
-  var settings = gdb.collection('settings')
+  global.db = CyclicDB(global.cfg.dbName)
+  // Достаём таблицу настроек
+  var settings = global.db.collection('settings')
+  // Достаём реквизиты ТГ из таблицы
+   = await settings.get('tgApi')
+  console.log(item)
 }
 start()
 
 
 
 const run1     = async function() {
-  let item = await settings.get('tgApi')
-  console.log(item)
+  
   run2({id: item.props.id, hash: item.props.hash})
 }
 run1()
