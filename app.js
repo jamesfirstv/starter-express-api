@@ -8,11 +8,14 @@ global.cfg          = {}
 global.cfg.dbName   = 'apricot-calf-garbCyclicDB'
 global.cfg.peerName = 'WastelandWarsBot'
 
-// Подключаем базу данных
-global.db       = CyclicDB(dbName)
+// Асинхронная функция запуска
+const start = function() {
+  
+}
 
-//и асинхронно достаём реквизиты ТГ из БД во втором
-// потоке (первый пролетает по файлу насквозь, определяя константы)
+// Подключаем базу данных
+global.db = CyclicDB(dbName)
+// Асинхронно достаём реквизиты ТГ из БД
 
 // 
 
