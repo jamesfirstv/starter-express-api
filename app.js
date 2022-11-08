@@ -1,7 +1,6 @@
 // Грузим либы
 const CyclicDB  = require('cyclic-dynamodb')
 const MTProto   = require('@mtproto/core')
-
 const { sleep } = require('@mtproto/core/src/utils/common')
 
 // Настройки
