@@ -23,9 +23,8 @@ class API {
         return this.call(method, params, options)
       }
 
-      if (error_code === 303) {
-        const [type, dcIdAsString] = error_message.split('_MIGRATE_')
-
+      if (error.error_code === 303) {
+        const [type, dcIdAsString] = error.error_message.split('_MIGRATE_')
         const dcId = Number(dcIdAsString)
 
         // If auth.sendCode call on incorrect DC need change default DC, because
