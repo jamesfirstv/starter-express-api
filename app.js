@@ -9,17 +9,16 @@ global.cfg.dbName   = 'apricot-calf-garbCyclicDB'
 global.cfg.peerName = 'WastelandWarsBot'
 
 // Асинхронная функция запуска
-const start = function() {
-  
+const start = async function() {
+  // Подключаем базу данных
+  global.db = CyclicDB(dbName)
+  // Достаём реквизиты ТГ из БД
+  var settings = gdb.collection('settings')
 }
+start()
 
-// Подключаем базу данных
-global.db = CyclicDB(dbName)
-// Асинхронно достаём реквизиты ТГ из БД
 
-// 
 
-const settings = db.collection('settings')
 const run1     = async function() {
   let item = await settings.get('tgApi')
   console.log(item)
