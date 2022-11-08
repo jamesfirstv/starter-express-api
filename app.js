@@ -10,14 +10,15 @@ global.cfg.peerName = 'WastelandWarsBot'
 // Асинхронная функция запуска
 const start = async function() {
   // Подключаем базу данных
-  global.db = CyclicDB(global.cfg.dbName)
+  global.db          = CyclicDB(global.cfg.dbName)
   // Достаём таблицу настроек
-  let settings = global.db.collection('settings')
+  let settings       = global.db.collection('settings')
   // Ждем реквизиты ТГ из таблицы
   let {api_id, hash} = await settings.get('tgApi')
   // Подключаемся к ТГ
-  global.tg = new TgApi(api_id, hash)
-  
+  let tg = global.tg = new TgApi(api_id, hash)
+
+  // Запрос страны
   mtproto.call('help.getNearestDc').then(result => {
     console.log('country:', result.country)
   })
@@ -26,30 +27,7 @@ start()
 
 
 
-const run1     = async function() {
-  
-  run2({id: item.props.id, hash: item.props.hash})
-}
-run1()
 
-// Дальше во втором потоке цепляемся за ТГ
-var mtproto = null
-const run2    = function(tgApi) {
-  console.log(tgApi)
-  console.log('=======')
-  console.log(tgApi.id)
-
-  mtproto = new MTProto({
-    api_id: tgApi.id, api_hash: tgApi.hash,
-    storageOptions: {instance: TempStor}
-  })
-
-  // 2. Print the user country code
-  mtproto.call('help.getNearestDc').then(result => {
-    console.log('country:', result.country)
-  })
-
-}
 
 
 
