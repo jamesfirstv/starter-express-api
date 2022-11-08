@@ -16,14 +16,10 @@ class API {
     } catch (error) {
       console.log(`${method} error:`, error)
 
-      const { error_code, error_message } = error
-
-      if (error_code === 420) {
-        const seconds = Number(error_message.split('FLOOD_WAIT_')[1])
-        const ms = seconds * 1000
-
-        await sleep(ms)
-
+      if (error.error_code === 420) {
+        await sleep(1000 * Number(
+          error.error_message.split('FLOOD_WAIT_')[1]
+        ))
         return this.call(method, params, options)
       }
 
