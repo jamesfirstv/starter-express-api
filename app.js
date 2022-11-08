@@ -1,6 +1,5 @@
 // Грузим либы
 const CyclicDB  = require('cyclic-dynamodb')
-const { sleep } = require('@mtproto/core/src/utils/common')
 const TgApi     = require('tg.js')
 
 // Настройки
@@ -16,8 +15,12 @@ const start = async function() {
   let settings = global.db.collection('settings')
   // Ждем реквизиты ТГ из таблицы
   let {api_id, hash} = await settings.get('tgApi')
-
-  console.log(item)
+  // Подключаемся к ТГ
+  global.tg = new TgApi(api_id, hash)
+  
+  mtproto.call('help.getNearestDc').then(result => {
+    console.log('country:', result.country)
+  })
 }
 start()
 
