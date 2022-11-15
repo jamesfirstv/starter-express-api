@@ -30,7 +30,7 @@ const start = async function() {
 
 }
 start()
-
+/*
 (async () => {
   
 
@@ -67,11 +67,4 @@ start()
   console.log('allMessages:', allMessages);
 })();
 
-
-
-
-
-
-
-
-
+*/
