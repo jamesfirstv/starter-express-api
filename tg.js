@@ -1,3 +1,4 @@
+// Грузим либы
 const MTProto   = require('@mtproto/core')
 const TempStor  = require('@mtproto/core/src/storage/temp')
 const { sleep } = require('@mtproto/core/src/utils/common')
