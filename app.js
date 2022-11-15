@@ -15,6 +15,7 @@ const start = async function() {
   let settings       = global.db.collection('settings')
   // Ждем реквизиты ТГ из таблицы
   let {api_id, hash} = await settings.get('tgApi')
+  console.log('From DB:', api_id, hash)
   // Подключаемся к ТГ
   let tg = global.tg = new TgApi(api_id, hash)
 
