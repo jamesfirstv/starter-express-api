@@ -23,26 +23,25 @@ const start = async function() {
   console.log('country: ', dc)
 
   // Слушаем Телегу
-  console.log(tg)
-  tg.updates.on('updatesTooLong', (updateInfo) => {
+  tg.up.on('updatesTooLong', (updateInfo) => {
     console.log('updatesTooLong:', updateInfo);
   })
-  tg.updates.on('updateShortMessage', (updateInfo) => {
+  tg.up.on('updateShortMessage', (updateInfo) => {
     console.log('updateShortMessage:', updateInfo);
   })
-  tg.updates.on('updateShortChatMessage', (updateInfo) => {
+  tg.up.on('updateShortChatMessage', (updateInfo) => {
     console.log('updateShortChatMessage:', updateInfo);
   })
-  tg.updates.on('updateShort', (updateInfo) => {
+  tg.up.on('updateShort', (updateInfo) => {
     console.log('updateShort:', updateInfo);
   })
-  tg.updates.on('updatesCombined', (updateInfo) => {
+  tg.up.on('updatesCombined', (updateInfo) => {
     console.log('updatesCombined:', updateInfo);
   })
-  tg.updates.on('updates', (updateInfo) => {
+  tg.up.on('updates', (updateInfo) => {
     console.log('updates:', updateInfo);
   })
-  tg.updates.on('updateShortSentMessage', (updateInfo) => {
+  tg.up.on('updateShortSentMessage', (updateInfo) => {
     console.log('updateShortSentMessage:', updateInfo);
   })
 
