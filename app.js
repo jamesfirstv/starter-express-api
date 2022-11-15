@@ -22,6 +22,32 @@ const start = async function() {
   let dc = await tg.call('help.getNearestDc')
   console.log('country: ', dc)
 
+  // Слушаем Телегу
+  tg.updates.on('updatesTooLong', (updateInfo) => {
+    console.log('updatesTooLong:', updateInfo);
+  })
+  tg.updates.on('updateShortMessage', (updateInfo) => {
+    console.log('updateShortMessage:', updateInfo);
+  })
+  tg.updates.on('updateShortChatMessage', (updateInfo) => {
+    console.log('updateShortChatMessage:', updateInfo);
+  })
+  tg.updates.on('updateShort', (updateInfo) => {
+    console.log('updateShort:', updateInfo);
+  })
+  tg.updates.on('updatesCombined', (updateInfo) => {
+    console.log('updatesCombined:', updateInfo);
+  })
+  tg.updates.on('updates', (updateInfo) => {
+    console.log('updates:', updateInfo);
+  })
+  tg.updates.on('updateShortSentMessage', (updateInfo) => {
+    console.log('updateShortSentMessage:', updateInfo);
+  })
+
+
+
+
   // 
   let peer = await tg.call('contacts.resolveUsername', {
     username: global.cfg.peerName,
