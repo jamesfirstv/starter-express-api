@@ -14,14 +14,13 @@ const start = async function() {
   // Достаём таблицу настроек
   let settings       = global.db.collection('settings')
   // Ждем реквизиты ТГ из таблицы
-  let dbAns      = await settings.get('tgApi')
-  let {id, hash} = dbAns.props
+  let dbAns          = await settings.get('tgApi')
   // Подключаемся к ТГ
-  let tg = global.tg = new TgApi(id, hash)
+  let tg = global.tg = new TgApi(dbAns.props.id, dbAns.props.hash)
 
   // Ждем ответ на запрос ближайшего ДЦ
   let dc = await tg.call('help.getNearestDc')
-  console.log('country:', dc.country)
+  console.log('country:', dc)
 }
 start()
 
