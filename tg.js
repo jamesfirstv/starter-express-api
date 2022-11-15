@@ -10,6 +10,7 @@ var API = class {
       api_id: id, api_hash: hash,
       storageOptions: {instance: TempStor}
     })
+    this.up      = this.mtproto.updates
   }
 
   async call(method, params, options = {}) {
