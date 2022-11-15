@@ -23,7 +23,7 @@ const start = async function() {
   console.log('country: ', dc)
 
   // 
-  let peer = await api.call('contacts.resolveUsername', {
+  let peer = await tg.call('contacts.resolveUsername', {
     username: global.cfg.peerName,
   })
   console.log('Peer: ', peer)
