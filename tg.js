@@ -3,6 +3,7 @@ const MTProto   = require('@mtproto/core')
 const TempStor  = require('@mtproto/core/src/storage/temp')
 const { sleep } = require('@mtproto/core/src/utils/common')
 
+// Класс обращения к сети TON и обработки ошибок
 var API = class {
   constructor(id, hash) {
     this.mtproto = new MTProto({
