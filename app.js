@@ -23,6 +23,7 @@ const start = async function() {
   console.log('country: ', dc)
 
   // Слушаем Телегу
+  console.log(tg)
   tg.updates.on('updatesTooLong', (updateInfo) => {
     console.log('updatesTooLong:', updateInfo);
   })
