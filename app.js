@@ -20,143 +20,58 @@ const start = async function() {
 
   // Ждем ответ на запрос ближайшего ДЦ
   let dc = await tg.call('help.getNearestDc')
-  console.log('country:', dc)
+  console.log('country: ', dc)
+
+  // 
+  let peer = await api.call('contacts.resolveUsername', {
+    username: global.cfg.peerName,
+  })
+  console.log('Peer: ', peer)
+
 }
 start()
 
-
-
-
-
-
-
-
-
-
-
-/*
-// Главный роутер
-function main(msg) {
-  if (msg.match('Чат лагеря'))
-    return '🏘В Нью-Рино'
-
-  if (msg.match('уютный город Рино,'))
-    return '/eat1<#>/eat1<#>/eat1<#>👣Пустошь'
-
-  if (msg.match('в этот раз уже буквально.'))
-    return '⛺️Вернуться<#>Вернуться в лагерь'
-
-  if (
-    msg.match('Твой путь преградил исполинских размеров монстр.')
-    || msg.match('в этот раз ты не получил сдачи.')
-  ) return '⚔️Атаковать'
-
-  if (
-    msg.match('Ты не сможешь увильнуть от противника')
-    || msg.match('Тебе не уйти от противника')
-    || msg.match('Во время вылазки на тебя напал')
-  ) return '⚔️Дать отпор'
-
-
-  let parse = msg.match(/👣(\d+)км/)
-  if (parse) parse = actPath(parse)
-  if (parse) return parse
-
-  if (msg.match('/view'))
-    return '👣Идти дaльше'
-
-  if (
-    msg.match('Ты съел ')
-    || msg.match('Ты одержал победу!')
-    || msg.match(' и его')
-    || msg.match('\n🐐')
-    || msg.match('\s🤘')
-    || msg.match('(без банды)')
-    || msg.match('водохранилище\n 🕳+')
-    || msg.match('датацентр\n 🕳+')
-  ) return '🔎Дeйствие'
-
-  if (msg.match('Ты очень голоден.'))
-    return '/myfood'
-  parse = msg.match(/\/use_1[0-2]\d/g)
-  if (parse) return parse[0]
+(async () => {
   
 
+  const channel = resolvedPeer.chats.find(
+    (chat) => chat.id === resolvedPeer.peer.channel_id
+  );
 
-  if (msg.match('Ты встретил бродячего торговца,'))
-      return '/buy_5i<#>🔎Дeйствие'
-      
+  const inputPeer = {
+    _: 'inputPeerChannel',
+    channel_id: channel.id,
+    access_hash: channel.access_hash,
+  };
 
+  const LIMIT_COUNT = 10;
+  const allMessages = [];
 
-  
-  if (msg.match('/dl_'))
-    return actClean(msg)
-  parse = msg.match(/\/del_\d+/)
-  if (parse)
-    return parse[0]
-}
+  const firstHistoryResult = await api.call('messages.getHistory', {
+    peer: inputPeer,
+    limit: LIMIT_COUNT,
+  });
 
-// --------------------
-// Ветка километража
-function actPath(parse) {
-  let x = Number(parse[1])
+  const historyCount = firstHistoryResult.count;
 
-  switch (x) {
-    case 2: return '👣Идти дaльше'
-    case 22: return '🚷В Темную зону'
-    case 52: return '🚷В Темную зону'
-//    case 50: return '/mystuff'
-    case 20: return '/voevat_suda'
-    case 68: case 69: return '⛺️Вернуться<#>Вернуться в лагерь'
-    default: return false
+  for (let offset = 0; offset < historyCount; offset += LIMIT_COUNT) {
+    const history = await api.call('messages.getHistory', {
+      peer: inputPeer,
+      add_offset: offset,
+      limit: LIMIT_COUNT,
+    });
+
+    allMessages.push(...history.messages);
   }
-}
 
-// --------------------
-// Ветка очистки
-function actClean(msg) {
-  const badGoods = [
-    'BFGzzv-4000',
-    'Боевая броня',
-    'Броня братства',
-    'Кинжал',
-    'Кожанный нагрудник',
-    'Мачате',
-    'Лазерный тесак',
-    'Мото-защита',
-    'Плотный капюшон',
-    'Противогаз',
-    'Супермолот',
-    'Фалмерский клинок',
-    'Фусронет',
-    'Ушанка',
-    'Вязаная шапка',
-    'Хлыст',
-    'Электромеч'
-  ]
+  console.log('allMessages:', allMessages);
+})();
 
-  let parse
-  for (let i=0; i<badGoods.length; i++) {
-    parse = msg.match(new RegExp(badGoods[i]+'.*(\\/dl_\\d+)'))
-    if (parse) break
-  }
-  if (parse) return parse[1]
-}
 
-// ====================
-// Подготовка сервера
-const express    = require("express")
-const bodyParser = require("body-parser")
-const app        = express()
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.all('*', (req, res) => {
-  let msg = req.body.query.message
-  console.log('Респондер прислал:\n' + msg + '\n---\n')
-  let ans = main(msg)
-  console.log('Мы отвечаем: ' + ans + '\n---\n')
-  res.send(JSON.stringify({"replies": [{"message": ans}]}))
-})
-app.listen(process.env.PORT || 3000)
-*/
+
+
+
+
+
+
 
